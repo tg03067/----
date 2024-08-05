@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css 주석, html 주석은 사용불가 */
+        div { color: cadetblue; } 
+        /* 태그 선택자 */
+        .cls-1 { background-color: beige; } 
+        /* 클래스 선택자 : 많이씀 ( 태그같은 것, cls-1을 가지고있는 전부, 복수 ) */
+        #id-1{ font-weight: bold; } /* 아이디 선택자 : 누구에게 든지 아이디값을 줄 수 있음.
+        한번 쓴 아이디는 두 번 사용 불가 javascript에서 많이씀. 한명만 선택, 단수 */
+    </style>
+</head>
+<body>
+    <div>1-div</div>
+    <div class="cls-1 cls-2 cls-3 baba ddd" id="id-2" onclick="alert('안녕');">2-div</div>
+    <p class="cls-1" id="id-1" style="color: red;">3-p</p>
+    <script>
+        var $id_1 = document.getElementById('id-1') ;
+        console.log($id_1) ;
+        $id_1.addEventListener('click', function(){
+            alert('하하하') ;
+        }) ;
+    </script>
+</body>
+</html>
