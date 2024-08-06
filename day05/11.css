@@ -1,0 +1,10 @@
+@charset 'utf-8' ;
+
+/* Menu만 선택해서 배경색 silver */
+nav > ul > li > a { background-color: silver; }
+/* header 태그 바로 아래에 있는 클래스 title을 가지고 있는 h1태그 선택 */
+header > h1.title { background-color: silver; }
+/* 인접 형제 선택자를 활용하여 Main Section 아래에 있는 menu 1 ~ 3 배경색 silver 적용 */
+section > h1.title + ul { background-color: silver; }
+/* 일반 형제 선택자를 활용해서 Mian title, Sub title 아래에 있는 menu 1 ~ 3 폰트색상 blue 적용 */
+section > h2 ~ ul { color: blue; }
