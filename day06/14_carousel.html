@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        .swiper {
+            width: 600px;
+            height: 300px;
+            border: 1px solid #eeeeee;
+            padding: 20px;
+        }
+    </style>
+    <title>14.carousel</title>
+</head>
+<body>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <script>        
+        /*
+            new Swiper(1, 2);
+            1인자: swiper태그들의 부모 지정
+        */
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal', //slide 방향
+            loop: false, //무한 slide 여부
+
+            // If we need pagination, 페이지네이션(페이징 숫자가 아닌 동그란 점) 표시
+            pagination: {
+                el: '.swiper-pagination', //페이지네이션이 표시될 element지정
+            },
+
+            // Navigation arrows, 화살표 표시
+            navigation: {
+                nextEl: '.swiper-button-next', //다음 element지정
+                prevEl: '.swiper-button-prev', //이전 element지정
+            },
+
+            // And if we need scrollbar, 스크롤바 표시
+            scrollbar: {
+                el: '.swiper-scrollbar', //스크롤바가 표시될 element지정
+            },
+        });
+    </script>
+</body>
+</html>
