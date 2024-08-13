@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24. flex-wrap</title>
+</head>
+<body>
+    <style>
+        /* flex-wrap: nowrap이 기본값 */
+        .container {
+            border: 2px solid #000 ; 
+            background-color: yellow ;
+            display: flex ;
+            flex-direction: row ;
+            width: 100px ;
+            flex-wrap: nowrap ;
+            margin-bottom: 10px ;
+            
+        }
+        .container > div {
+            border: 2px solid #000 ;
+            background-color: green ;
+            margin: 5px ;
+            /* auto(디폴트), 자식들의 기본 크기 설정 */
+            flex-basis: auto;
+        }
+        .container2 > div {
+            flex-basis: 40px ;
+        }
+        .container3 > div {
+            width: 40px ;
+        }
+    </style>
+    <div class="container">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+    </div>
+
+    <div class="container container2">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+    </div>
+
+    <div class="container container3">
+        <div>A</div>
+        <div>width로 처리</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+    </div>
+
+    <!-- flex-grow는 남는 공간 차지하는 비율. -->
+    <div class="container container4">
+        <div style="flex-grow: 1;">flex-grow</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div style="flex-grow: 3;">F</div>
+        <div>G</div>
+        <div>H</div>
+    </div>
+
+    <!-- 
+        flex-shrink는 flex-basis값보다 작아질 수 있는지 결정 
+        flex-shrink: 1; 기본값
+    -->
+    <style>
+        .container5 div {
+            flex-basis: 70px ;
+        }
+    </style>
+    <div class="container container5">
+        <div>A</div>
+        <div style="flex-shrink: 1;">flex-shrink</div>
+        <div>C</div>
+        <div style="flex-shrink: 1;">D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+    </div>
+
+    <!-- 
+        flex-shrink는 flex-basis값보다 작아질 수 있는지 결정 
+        flex-shrink: 0; 변하지 않겠다.
+    -->
+    <style>
+        .container6 div {
+            flex-basis: 70px ;
+        }
+    </style>
+    <div class="container container6">
+        <div>A</div>
+        <div style="flex-shrink: 0;">flex-shrink</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div style="flex-shrink: 0;">F</div>
+        <div>G</div>
+        <div>H</div>
+    </div>
+
+    <!-- 
+        flex-basis, flex-grow, flex-shrink
+        
+        flex: 2 1 auto; // 2: grow, 1:shrink, auto: basis
+    -->
+</body>
+</html>
