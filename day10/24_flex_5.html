@@ -7,7 +7,14 @@
 </head>
 <body>
     <style>
-        /* flex-wrap: nowrap이 기본값 */
+        /*
+            flex-wrap: nowrap이 기본값 
+            order의 기본값은 0
+
+            align-self는 align-items의 item 버전
+            특정 자식 아이템만 크로스 방향 컨트롤을 하고 싶을 때 사용.
+        */
+        
         .container { 
             display: flex; flex-direction: column; 
             border: 2px solid #000; 
